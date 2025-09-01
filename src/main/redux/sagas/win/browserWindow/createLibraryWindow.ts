@@ -49,6 +49,7 @@ export function* createLibraryWindow(_action: winActions.library.openRequest.TAc
         ...windowBound,
         minWidth: WINDOW_MIN_WIDTH,
         minHeight: WINDOW_MIN_HEIGHT,
+        titleBarStyle: 'hiddenInset',
         webPreferences: {
             // enableRemoteModule: false,
             allowRunningInsecureContent: false,

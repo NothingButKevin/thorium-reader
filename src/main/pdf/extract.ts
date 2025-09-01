@@ -43,6 +43,7 @@ export const extractPDFData =
 
             win = new BrowserWindow({
                 width: 800,
+                titleBarStyle: 'hiddenInset',
                 height: 600,
                 // show: false,
                 webPreferences: {

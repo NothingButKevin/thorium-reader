@@ -729,6 +729,7 @@ function createOpdsAuthenticationModalWin(url: string): BrowserWindow | undefine
             width: libWinBound?.width || 800,
             height: libWinBound?.height || 600,
             parent: libWin,
+            titleBarStyle: 'hiddenInset',
             modal: true,
             show: false,
             webPreferences: {
