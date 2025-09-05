@@ -36,7 +36,8 @@ export function* createReaderWindow(action: winActions.reader.openRequest.TActio
 
     const readerWindow = new BrowserWindow({
         ...winBound,
-        titleBarStyle: 'hiddenInset',
+        titleBarStyle: process.platform === "darwin" ? "hiddenInset" : undefined,
+        frame: process.platform === "darwin" ? false : true,
         minWidth: WINDOW_MIN_WIDTH,
         minHeight: WINDOW_MIN_HEIGHT,
         webPreferences: {

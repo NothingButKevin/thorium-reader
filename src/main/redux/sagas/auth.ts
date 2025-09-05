@@ -729,7 +729,8 @@ function createOpdsAuthenticationModalWin(url: string): BrowserWindow | undefine
             width: libWinBound?.width || 800,
             height: libWinBound?.height || 600,
             parent: libWin,
-            titleBarStyle: 'hiddenInset',
+            titleBarStyle: process.platform === "darwin" ? "hiddenInset" : undefined,
+            frame: process.platform === "darwin" ? false : true,
             modal: true,
             show: false,
             webPreferences: {

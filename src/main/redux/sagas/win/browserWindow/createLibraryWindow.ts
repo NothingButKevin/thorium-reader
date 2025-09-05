@@ -49,7 +49,8 @@ export function* createLibraryWindow(_action: winActions.library.openRequest.TAc
         ...windowBound,
         minWidth: WINDOW_MIN_WIDTH,
         minHeight: WINDOW_MIN_HEIGHT,
-        titleBarStyle: 'hiddenInset',
+        titleBarStyle: process.platform === "darwin" ? "hiddenInset" : undefined,
+        frame: process.platform === "darwin" ? false : true,
         webPreferences: {
             // enableRemoteModule: false,
             allowRunningInsecureContent: false,

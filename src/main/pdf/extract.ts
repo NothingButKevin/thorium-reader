@@ -43,7 +43,8 @@ export const extractPDFData =
 
             win = new BrowserWindow({
                 width: 800,
-                titleBarStyle: 'hiddenInset',
+                titleBarStyle: process.platform === "darwin" ? "hiddenInset" : undefined,
+                frame: process.platform === "darwin" ? false : true,
                 height: 600,
                 // show: false,
                 webPreferences: {
